@@ -23,7 +23,7 @@ public class MailSender {
 	/**
 	 * Contraseña de seguridad
 	 */
-	private static String passwordFrom="ForestBet2024";
+	private static String passwordFrom="wmzh irtr pzfr hesd";
 	/**
 	 * Asunto
 	 */
@@ -71,11 +71,8 @@ public class MailSender {
 			email.setRecipient(Message.RecipientType.TO, new InternetAddress(addressee));
 			BodyPart text= new MimeBodyPart();
 			text.setContent(content,"text/html");
-			BodyPart img = new MimeBodyPart();
-			img.setDataHandler(new DataHandler(new FileDataSource("src/co/edu/unbosque/util/media/GUIImgs/iconpdf.jpeg")));
 			MimeMultipart part = new MimeMultipart();
 			part.addBodyPart(text);
-			part.addBodyPart(img);
 			email.setSubject(subject);
 			email.setContent(part);
 			Transport t = session.getTransport("smtp");
@@ -85,8 +82,10 @@ public class MailSender {
 			return true;
 			
 		} catch (AddressException e) {
+			e.printStackTrace();
 			return false;
 		} catch (MessagingException e) {
+			e.printStackTrace();
 			return false;
 		}
 	}
