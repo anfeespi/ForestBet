@@ -14,7 +14,7 @@ import co.edu.unbosque.forestbet.datamodule.model.Client;
 import co.edu.unbosque.forestbet.datamodule.service.ClientService;
 
 @RestController
-@RequestMapping("/bets")
+@RequestMapping("/clients")
 @CrossOrigin(origins = "*")
 @Transactional
 public class ClientController {
@@ -33,7 +33,7 @@ public class ClientController {
 	public ResponseEntity<String> createClient(@RequestParam String email, @RequestParam String name,
 			@RequestParam String lastname,@RequestParam String document,@RequestParam Double money) {
 		Client client = new Client(email, name, lastname, document, money);
-		clientService.registerUser(client);
-		return ResponseEntity.status(HttpStatus.ACCEPTED).body("Creado con exito");
+		String response = clientService.registerUser(client);
+		return ResponseEntity.status(HttpStatus.ACCEPTED).body(response);
 	}
 }

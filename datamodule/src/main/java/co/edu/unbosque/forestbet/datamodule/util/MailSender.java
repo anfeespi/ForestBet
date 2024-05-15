@@ -19,11 +19,11 @@ public class MailSender {
 	/**
 	 * Correo electronico
 	 */
-	private static String emailFrom ="redthread107@gmail.com";
+	private static String emailFrom ="forestbetco@gmail.com";
 	/**
 	 * Contraseña de seguridad
 	 */
-	private static String passwordFrom="whhvjejrvtgfibvc";
+	private static String passwordFrom="ForestBet2024";
 	/**
 	 * Asunto
 	 */
@@ -52,8 +52,8 @@ public class MailSender {
 	 */
 	public static boolean sendEmail(String addressee, String username) {
 		prop= new Properties();
-		subject= "BIENVENIDO A RED THREAD!";
-		content = "<h1> ¡HOLA "+username+"!"+"</h1>"+"<br> Conecta con tu <b> hilo rojo </b> y descubre el camino hacia tu destino";
+		subject= "BIENVENIDO A FORESTBET!";
+		content = "<h1> ¡HOLA "+username+"!"+"</h1>"+"<br> Tu casa de apuestas <b> te espera! </b> Contamos con deportes como: <b>Fórmula 1</b>";
 		prop.put("mail.smtp.host","smtp.gmail.com");
 		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
 		prop.setProperty("mail.smtp.starttls.enable", "true");

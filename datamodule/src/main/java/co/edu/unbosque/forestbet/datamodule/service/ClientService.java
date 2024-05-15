@@ -5,25 +5,33 @@ import org.springframework.stereotype.Service;
 
 import co.edu.unbosque.forestbet.datamodule.model.Client;
 import co.edu.unbosque.forestbet.datamodule.repository.ClientRepository;
+import co.edu.unbosque.forestbet.datamodule.util.MailSender;
 
 @Service
 public class ClientService {
 	@Autowired
 	private ClientRepository clientRepository;
-	
+
 	public ClientService() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public void registerUser(Client client) {
+
+	public String registerUser(Client client) {
+		if (!validateEmail(client.getEmail(), client.getName()))
+			return "Couldn't validate email";
 		clientRepository.save(client);
+		return "Registro exitoso";
 	}
-	
+
 	public Client searchByDocument(String document) {
 		return clientRepository.findByDocument(document).get(0);
 	}
-	
+
 	public void deleteUser(Long id) {
 		clientRepository.deleteById(id);
+	}
+
+	public boolean validateEmail(String email, String name) {
+		return MailSender.sendEmail(email, name);
 	}
 }
