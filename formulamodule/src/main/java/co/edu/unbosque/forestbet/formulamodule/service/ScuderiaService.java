@@ -20,7 +20,7 @@ public class ScuderiaService {
 	public void chargeAllScuderias(String json) {
 		deleteScuderias();
 		json = json.substring(json.indexOf("\"Constructors\":"), json.indexOf("]"));
-		json = json.replace("\"Constructors\":", "");
+		json = json.replace("\"Constructors\":", "").replace("[", "");
 		String scuderias[] = json.replace("{", "").split("},");
 		
 		for (String string : scuderias) {
@@ -29,7 +29,7 @@ public class ScuderiaService {
 			aux.setConstructorId(attributes[0].replace("\"", "").replace("constructorId:", ""));
 			aux.setUrl(attributes[1].replace("\"", "").replace("url:", "").replace("\\/", "/"));
 			aux.setName(attributes[2].replace("\"", "").replace("name:", ""));
-			aux.setNationality(attributes[3].replace("\"", "").replace("nationality", "").replace("}", ""));
+			aux.setNationality(attributes[3].replace("\"", "").replace("nationality:", "").replace("}", ""));
 			createScuderia(aux);
 		}
 	}

@@ -1,6 +1,8 @@
 package co.edu.unbosque.forestbet.formulamodule.model;
 
-import java.sql.Date;
+import java.util.Date;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -25,8 +27,9 @@ public class Pilot {
 	private String lastname;
 	private Date dateOfBirth;
 	private String nationality;
+	@JsonBackReference
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "scuderia_id", nullable = false, referencedColumnName = "scuderia_id")
+	@JoinColumn(name = "scuderia_id", referencedColumnName = "scuderia_id")
 	private Scuderia scuderia;
 	
 	public Pilot() {
