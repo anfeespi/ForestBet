@@ -10,38 +10,38 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.unbosque.forestbet.formulamodule.model.Pilot;
-import co.edu.unbosque.forestbet.formulamodule.service.PilotService;
+import co.edu.unbosque.forestbet.formulamodule.model.Race;
+import co.edu.unbosque.forestbet.formulamodule.service.RaceService;
 import co.edu.unbosque.forestbet.formulamodule.util.HttpConnectionsAndRequests;
 import jakarta.transaction.Transactional;
 
 @RestController
-@RequestMapping("/pilots")
+@RequestMapping("/races")
 @CrossOrigin(origins = "*")
 @Transactional
-public class PilotController {
+public class RaceController {
 	@Autowired
-	private PilotService pilotService;
+	private RaceService raceService;
 	
-	public PilotController() {
+	public RaceController() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	@GetMapping("/chargePilots")
-	public ResponseEntity<String> chargeAllThePilots(){
-		String request = "http://ergast.com/api/f1/current/drivers.json";
+	@GetMapping("/chargeRaces")
+	public ResponseEntity<String> chargeAllTheRaces(){
+		String request = "http://ergast.com/api/f1/current/races.json";
 		String method = "GET";
 		
 		String response = HttpConnectionsAndRequests.doARequest(request, method);
 		
 		if(response.isBlank()) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Problema al hacer el request");
 		
-		pilotService.chargeAllPilots(response);
+		raceService.chargeAllRaces(response);
 		return ResponseEntity.accepted().body("Cargados con exito");
 	}
 	
-	@GetMapping("/showPilots")
-	public ResponseEntity<List<Pilot>> showPilots(){
-		return ResponseEntity.accepted().body(pilotService.showAllPilots());
+	@GetMapping("/showRaces")
+	public ResponseEntity<List<Race>> showRaces(){
+		return ResponseEntity.accepted().body(raceService.showAllRaces());
 	}
 }

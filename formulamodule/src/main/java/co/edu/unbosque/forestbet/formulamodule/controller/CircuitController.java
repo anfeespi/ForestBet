@@ -10,38 +10,41 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.edu.unbosque.forestbet.formulamodule.model.Pilot;
-import co.edu.unbosque.forestbet.formulamodule.service.PilotService;
+import co.edu.unbosque.forestbet.formulamodule.model.Circuit;
+import co.edu.unbosque.forestbet.formulamodule.service.CircuitService;
 import co.edu.unbosque.forestbet.formulamodule.util.HttpConnectionsAndRequests;
 import jakarta.transaction.Transactional;
 
 @RestController
-@RequestMapping("/pilots")
+@RequestMapping("/circuits")
 @CrossOrigin(origins = "*")
 @Transactional
-public class PilotController {
+public class CircuitController {
 	@Autowired
-	private PilotService pilotService;
-	
-	public PilotController() {
+	private CircuitService circuitService;
+
+	public CircuitController() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	@GetMapping("/chargePilots")
-	public ResponseEntity<String> chargeAllThePilots(){
-		String request = "http://ergast.com/api/f1/current/drivers.json";
+
+	@GetMapping("/chargeCircuits")
+	public ResponseEntity<String> chargeCircuits() {
+		String request = "http://ergast.com/api/f1/current/circuits.json";
 		String method = "GET";
-		
+
 		String response = HttpConnectionsAndRequests.doARequest(request, method);
-		
-		if(response.isBlank()) return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Problema al hacer el request");
-		
-		pilotService.chargeAllPilots(response);
-		return ResponseEntity.accepted().body("Cargados con exito");
+
+		if (response.isBlank())
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Problema al cargar los datos");
+
+		circuitService.chargeAllCircuits(response);
+
+		return ResponseEntity.accepted().body("Cargados exitosamente");
 	}
-	
-	@GetMapping("/showPilots")
-	public ResponseEntity<List<Pilot>> showPilots(){
-		return ResponseEntity.accepted().body(pilotService.showAllPilots());
+
+	@GetMapping("/showCircuits")
+	public ResponseEntity<List<Circuit>> showCircuits() {
+		return ResponseEntity.accepted().body(circuitService.showAllCircuits());
 	}
+
 }

@@ -1,7 +1,7 @@
 package co.edu.unbosque.forestbet.formulamodule.model;
 
-import java.sql.Date;
 import java.sql.Time;
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 

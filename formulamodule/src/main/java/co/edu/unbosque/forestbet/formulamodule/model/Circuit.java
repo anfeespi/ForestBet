@@ -1,5 +1,7 @@
 package co.edu.unbosque.forestbet.formulamodule.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,6 +20,7 @@ public class Circuit {
 	private String circuitName;
 	private String city;
 	private String country;
+	@JsonBackReference
 	@OneToOne(mappedBy = "circuit")
 	private Race race;
 	
