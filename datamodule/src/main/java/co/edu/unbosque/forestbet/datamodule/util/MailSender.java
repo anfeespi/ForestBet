@@ -2,8 +2,6 @@ package co.edu.unbosque.forestbet.datamodule.util;
 
 import java.util.Properties;
 
-import jakarta.activation.DataHandler;
-import jakarta.activation.FileDataSource;
 import jakarta.mail.BodyPart;
 import jakarta.mail.Message;
 import jakarta.mail.MessagingException;
