@@ -48,7 +48,7 @@ public class PilotService {
 				e.printStackTrace();
 			}
 
-			aux.setNationality(attributes[7].replace("\"", "").replace("nationality:", ""));
+			aux.setNationality(attributes[7].replace("\"", "").replace("nationality:", "").replace("}", ""));
 
 			String scuderia = "";
 
