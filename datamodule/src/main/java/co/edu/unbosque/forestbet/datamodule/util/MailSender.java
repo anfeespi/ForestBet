@@ -167,7 +167,7 @@ public class MailSender {
 				+ "													<table class=\"heading_block block-2\" width=\"100%\" border=\"0\" cellpadding=\"10\" cellspacing=\"0\" role=\"presentation\" style=\"mso-table-lspace: 0pt; mso-table-rspace: 0pt;\">\r\n"
 				+ "														<tr>\r\n"
 				+ "															<td class=\"pad\">\r\n"
-				+ "																<h1 style=\"margin: 0; color: #000000; direction: ltr; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 28.799999999999997px;\"><strong>¡"+username+" Bienvenido a ForestBet!<br></strong></h1>\r\n"
+				+ "																<h1 style=\"margin: 0; color: #000000; direction: ltr; font-family: 'Cabin', Arial, 'Helvetica Neue', Helvetica, sans-serif; font-size: 24px; font-weight: 700; letter-spacing: normal; line-height: 120%; text-align: center; margin-top: 0; margin-bottom: 0; mso-line-height-alt: 28.799999999999997px;\"><strong>¡"+username+", Bienvenido a ForestBet!<br></strong></h1>\r\n"
 				+ "															</td>\r\n"
 				+ "														</tr>\r\n"
 				+ "													</table>\r\n"
