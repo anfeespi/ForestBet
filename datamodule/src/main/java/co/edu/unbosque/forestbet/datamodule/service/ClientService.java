@@ -20,7 +20,8 @@ public class ClientService {
 		if (!validateEmail(client.getEmail(), client.getName()))
 			return "Couldn't validate email";
 		clientRepository.save(client);
-		return "Registro exitoso";
+		long id = clientRepository.count();
+		return "Registro exitoso -"+id;
 	}
 
 	public Client searchByDocument(String document) {

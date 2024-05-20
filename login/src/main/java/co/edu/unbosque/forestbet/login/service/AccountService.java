@@ -28,7 +28,7 @@ public class AccountService {
 	public Long login(String username, String password) {
 		if(accountRepository.existsByUsername(username)) {
 			Account acc = accountRepository.findByUsernameAndEncryptedPassword(username, password);
-			return acc.getIdUser();
+			return acc==null?-1:acc.getIdUser();
 		}
 		
 		return (long) -1;
