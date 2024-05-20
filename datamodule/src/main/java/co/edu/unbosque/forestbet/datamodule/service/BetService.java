@@ -1,5 +1,6 @@
 package co.edu.unbosque.forestbet.datamodule.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,5 +28,9 @@ public class BetService {
 	
 	public Optional<Bet> searchBetById(Long id) {
 		return betRepository.findById(id);
+	}
+	
+	public List<Bet> showAll(){
+		return (List<Bet>) betRepository.findAll();
 	}
 }
