@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Registrarse</title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <head>
+          <meta charset="utf-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Sign Up Form</title>
+          <link rel="stylesheet" href="css/normalize.css">
+          <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+          <link rel="stylesheet" href="css/main.css">
+      </head>
+      <body>
+
+        <form action="/registerUser" class="register-form" method="post">
+
+          <h1>Registrarse</h1>
+
+          <fieldset>
+            <label for="name">Nombres:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="apellido">Apellidos:</label>
+            <input type="text" id="lastname" name="lastname">
+
+            <label for="mail">Email:</label>
+            <input type="email" id="email" name="email">
+            
+            <label for="mail">Username:</label>
+            <input type="text" id="username" name="username">
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+
+            <label>Documento:</label>
+            <input type="number" id="document" name="document">
+
+            <label>Dinero a Apostar:</label>
+            <input type="number" id="money" name="money">
+          </fieldset>
+
+          <fieldset></fieldset>
+          <button type="submit">Sign Up</button>
+        </form>
+      <script src="js/script.js"></script>
+  </body>
+</html>
