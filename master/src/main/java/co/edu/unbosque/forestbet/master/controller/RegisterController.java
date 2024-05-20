@@ -1,14 +1,14 @@
 package co.edu.unbosque.forestbet.master.controller;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import co.edu.unbosque.forestbet.master.util.HttpConnectionsAndRequests;
 
-@RestController
+@Controller
 @RequestMapping
 public class RegisterController {
 	
@@ -31,7 +31,7 @@ public class RegisterController {
 		requestLogin.append("&encryptedPassword="+password);
 		requestLogin.append("&idUser="+id);
 		String responseLogin = HttpConnectionsAndRequests.doARequest(requestLogin.toString(), method);
-		
-		return responseData + responseLogin;
+		System.out.println(responseLogin);
+		return "mainpage";
 	}
 }

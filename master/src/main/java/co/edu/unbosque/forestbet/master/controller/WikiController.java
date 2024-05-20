@@ -2,10 +2,10 @@ package co.edu.unbosque.forestbet.master.controller;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
 
@@ -15,7 +15,7 @@ import co.edu.unbosque.forestbet.master.model.Race;
 import co.edu.unbosque.forestbet.master.model.Scuderia;
 import co.edu.unbosque.forestbet.master.util.HttpConnectionsAndRequests;
 
-@RestController
+@Controller
 @RequestMapping
 public class WikiController {
 
@@ -135,7 +135,7 @@ public class WikiController {
 	}
 	
 	@GetMapping("/chargeTheWiki")
-	public void chargeWiki(Model model) {
+	public String chargeWiki(Model model) {
 		chargeScuderias(model);
 		chargePilots(model);
 		chargeCircuits(model);
@@ -145,6 +145,8 @@ public class WikiController {
 		showPilots(model);
 		showCircuits(model);
 		showRaces(model);
+		
+		return "wiki";
 	}
 
 }

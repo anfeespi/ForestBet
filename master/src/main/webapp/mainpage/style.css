@@ -1,0 +1,65 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #000000;
+}
+
+.navbar a,
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar a:hover,
+.navbar .navbar-brand:hover {
+  color: #d3d3d3;
+}
+
+.dropdown-menu a:hover {
+  background-color: #575757;
+}
+
+.content {
+  padding: 20px;
+}
+
+.custom-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.custom-btn:hover {
+  background-color: #0056b3;
+}
+
+}
+.navbar a, .navbar .navbar-brand {
+    color: white;
+}
+.navbar a:hover, .navbar .navbar-brand:hover {
+    color: #d3d3d3;
+}
+.dropdown-menu a:hover {
+    background-color: #575757;
+}
+.content {
+    padding: 20px;
+}
+.custom-btn {
+    background-color: #007bff;
+    color: white;
+}
+.custom-btn:hover {
+    background-color: #0056b3;
+}
+.navbar-brand img {
+    height: 80px; /* Ajusta el tamaño según sea necesario */
+}
