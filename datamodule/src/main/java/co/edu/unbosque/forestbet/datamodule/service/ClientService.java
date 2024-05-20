@@ -25,7 +25,7 @@ public class ClientService {
 	}
 
 	public Client searchByDocument(String document) {
-		return clientRepository.findByDocument(document).get(0);
+		return clientRepository.findByDocument(document).size()==0?null:clientRepository.findByDocument(document).get(0);
 	}
 
 	public void deleteUser(Long id) {

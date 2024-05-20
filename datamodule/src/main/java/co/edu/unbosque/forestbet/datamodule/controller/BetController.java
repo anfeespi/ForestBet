@@ -35,8 +35,13 @@ public class BetController {
 			@RequestParam String document) {
 		Bet bet = new Bet(field, money, quote, statusWin, sport_id);
 		Client client = clientService.searchByDocument(document);
-		if (client.equals(new Client()))
+		if (client == null)
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Documento no encontrado");
+		
+		if (client.getMoney() < money)
+			return ResponseEntity.status(HttpStatus.PAYMENT_REQUIRED).body("No hay suficiente dinero");
+		
+		client.setMoney(client.getMoney() - money);
 		bet.setClient(client);
 		betService.doABet(bet);
 		return ResponseEntity.status(HttpStatus.ACCEPTED).body("Creado con éxito");
