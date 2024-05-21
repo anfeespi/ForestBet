@@ -1,43 +1,161 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar con Apuestas</title>
-    <link href="mainpage/style.css" rel="stylesheet" type="text/css" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ForestBet</title>
+<link href="mainpage/style.css" rel="stylesheet" />
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+	rel="stylesheet">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark">
-        <a class="navbar-brand" href="mainpage.html">
-            <img src="mainpage/logoforest.png" alt="Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="apuesta.html">Apuesta</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/profile/}+${client_id}">Ver Perfil</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link" href="chargeTheWiki">Wiki</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<a class="navbar-brand" href="mainpage.html"> <img
+			src="mainpage/logoforest.png" alt="Logo">
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse"
+			data-target="#navbarNav" aria-controls="navbarNav"
+			aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item"><a class="nav-link"
+					th:href="@{/profile/}+${client_id}">Ver Perfil</a></li>
+				<li class="nav-item"><a class="nav-link" href="chargeTheWiki">Wiki</a></li>
+				<li class="nav-item"><a class="nav-link" href="#apuestas">¿Que
+						son las apuestas?</a></li>
+				<li class="nav-item"><a class="nav-link" href="#Fórmula 1">Fórmula
+						1</a></li>
+				<li class="nav-item"><a class="nav-link" href="#about">Sobre ForestBet</a></li>
+			</ul>
+		</div>
+	</nav>
 
-    <!-- jQuery, Popper.js, Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<!-- jQuery, Popper.js, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<script src="mainpage/script.js"></script>
 
-      <script src="mainpage/script.js"></script>
-   
+	<section id="contenido">
+		<div id="apuestas">
+			<article class="article">
+				<h2>¿Qué son las apuestas?</h2>
+				<br>
+				<p>
+					Una <strong>apuesta</strong> es una forma de compromiso basado en
+					el <em>azar</em>, en el cual deben existir al menos dos apostadores
+					y en el que queda bien especificado quién apuesta contra quién y
+					qué es lo que ambas partes recibirán de ganar. La misma puede ser
+					verbal o escrita; tiene validez de igual modo y debe ser cumplida.
+					En toda apuesta se espera obtener algún tipo de beneficio o
+					satisfacción de la naturaleza que sea, si se gana, pero en
+					contraparte ambos deben pactar qué es lo que perderán o de lo
+					contrario no existirá la obligación de pagar la apuesta.
+				</p>
+				<p>
+					Las <em>apuestas deportivas</em> se catalogan como un juego de azar
+					en las que se realizan pronósticos sobre eventos deportivos de toda
+					índole con dinero real. De este modo, si acierta la apuesta que ha
+					realizado, obtendrá ganancias en base a la cuota sobre la que ha
+					hecho el pronóstico.
+				</p>
+				<p>
+					Hoy en día, las apuestas deportivas en línea son totalmente
+					accesibles y es muy sencillo apostar en casas de apuestas
+					licenciadas. <strong>En ellas encontrará un catálogo
+						deportivo muy extenso y una gran variedad de tipos de apuestas
+						deportivas, ya sean apuestas convencionales, futuras, en vivo o
+						especiales.</strong>
+				</p>
+				<p>
+					Para realizar pronósticos, <em>las mejores casas de apuestas</em>
+					colocan cuotas para cada uno de los mercados disponibles. Esas
+					valoraciones se otorgan tras un estudio previo y el uso de
+					estadísticas, con lo que se obtiene una cifra acorde a las
+					probabilidades de que una acción suceda a lo largo del evento
+				</p>
+				<a
+					href="https://www.eltiempo.com/apuestas-deportivas/como-funcionan-las-apuestas-846369">Reseña
+					de El Tiempo</a> <br> <br> <img class="primer" alt="photo 1"
+					src="img/apuestas.webp" />
+			</article>
+		</div>
+
+		<div id="Fórmula 1">
+			<article class="article">
+				<h2>¿Qué es la Fórmula 1?</h2>
+				<br>
+				<p>
+					El <strong>Campeonato Mundial de Fórmula 1 de la FIA</strong>, más
+					conocido como <em>Fórmula 1, F1</em> o <em>Fórmula Uno</em>, es la
+					principal competición de automovilismo internacional y el
+					campeonato de deportes de motor más popular y prestigioso del
+					mundo. La entidad que la dirige es la Federación Internacional del
+					Automóvil (FIA). Desde septiembre de 2016, tras la adquisición de
+					Formula One Group, la empresa estadounidense Liberty Media es la
+					responsable de gestionar y operar el campeonato.
+				</p>
+				<br>
+				<p>
+					A cada carrera se le denomina <em>Gran Premio</em> y el torneo que
+					las agrupa es el Campeonato Mundial de Fórmula 1. La mayoría de los
+					circuitos de carreras donde se celebran los Grandes Premios son
+					autódromos, aunque también se utilizan circuitos callejeros y
+					anteriormente se utilizaron circuitos ruteros. A su vez, los
+					automóviles utilizados son monoplazas con la última tecnología
+					disponible, siempre limitadas por un reglamento técnico; algunas
+					mejoras que fueron desarrolladas en la Fórmula 1 terminaron siendo
+					utilizadas en automóviles comerciales, como el freno de disco.
+				</p>
+				<a href="https://es.wikipedia.org/wiki/F%C3%B3rmula_1">Para más
+					información click aquí</a> <br> <br> <img class="primer"
+					alt="photo 1" src="img/ayrton_senna.jpg" />
+			</article>
+
+		</div>
+		<div id="about">
+			<article class="article">
+				<h2>Sobre ForestBet</h2>
+				<br>
+				<p>
+					<strong>ForestBet</strong> nació como un proyecto básico con un
+					objetivo claro: <em>combinar la diversión de ver deportes con
+						la emoción de disfrutar de ellos de manera sana y responsable</em> a
+					través de apuestas. Este enfoque permite a los aficionados no solo
+					seguir sus deportes favoritos, sino también experimentar una nueva
+					dimensión de pasión y emoción. Al apostar, los usuarios pueden
+					involucrarse aún más en los eventos deportivos que aman, añadiendo
+					una capa extra de entretenimiento. <strong>ForestBet</strong>
+					promueve una cultura de apuestas seguras y responsables, asegurando
+					que la experiencia sea siempre positiva y emocionante. Con
+					ForestBet, puedes disfrutar de tus deportes favoritos y al mismo
+					tiempo vivir la emoción de cada deporte, <em>justo como te
+						gusta</em>.
+				</p>
+				<br>
+				<p>
+					<em>ForestBet aun es una aplicación en desarrollo lo que
+						significa que aún no están todos los deportes que deseariamos, sin
+						embargo es una aplicación escalable que pronto te traerá la
+						emoción de otros deportes aparte de la F1.</em>
+					<br>
+					<em>-El equipo de ForestBet</em>
+				</p>
+			</article>
+		</div>
+		<footer> Andrés Espitia &copy 2024 </footer>
+	</section>
 </body>
 </html>

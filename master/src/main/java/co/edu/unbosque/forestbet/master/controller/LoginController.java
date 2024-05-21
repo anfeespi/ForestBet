@@ -41,34 +41,40 @@ public class LoginController {
 	}
 	
 	@GetMapping("/profile/{client_id}")
-	public String chargeProfile(@PathVariable long client_id, Model model) {
-		if(client_id != -1) {
-			StringBuilder request = new StringBuilder("http://localhost:8081/clients/getClient?");
-			request.append("id="+client_id);
-			
-			String method = "GET";
-			
-			String response = HttpConnectionsAndRequests.doARequest(request.toString(), method);
-
-			Gson gson = new Gson();
-			
-			Client client = gson.fromJson(response, Client.class);
-			
-			model.addAttribute("cliente", client);
-			
-			Set<Bet> bets = client.getBets();
-			
-			List<Bet> betsToReturn = new ArrayList<Bet>();
-			
-			for (Bet bet : bets) {
-				betsToReturn.add(bet);
+	public String chargeProfile(@PathVariable String client_id, Model model) {
+		System.out.println(client_id);
+		try {
+			if(!client_id.equals("null") && !client_id.equals("-1")) {
+				StringBuilder request = new StringBuilder("http://localhost:8081/clients/getClient?");
+				request.append("id="+client_id);
+				
+				String method = "GET";
+				
+				String response = HttpConnectionsAndRequests.doARequest(request.toString(), method);
+				
+				Gson gson = new Gson();
+				
+				Client client = gson.fromJson(response, Client.class);
+				
+				model.addAttribute("cliente", client);
+				
+				Set<Bet> bets = client.getBets();
+				
+				List<Bet> betsToReturn = new ArrayList<Bet>();
+				
+				for (Bet bet : bets) {
+					betsToReturn.add(bet);
+				}
+				
+				model.addAttribute("bets", betsToReturn);
+				
+				return "perfil";
+			}else {
+				return "redirect:/login.html";
 			}
 			
-			model.addAttribute("bets", betsToReturn);
-			
-			return "perfil";
-		}else {
-			return "login";
+		}catch (Exception e) {
+			return "redirect:/login.html";
 		}
 	}
 	

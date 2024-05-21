@@ -1,55 +1,68 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar con Apuestas</title>
-    <link href="mainpage/style.css" rel="stylesheet" type="text/css" />
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Hacer apuesta</title>
+<link th:href="@{/mainpage/style.css}" rel="stylesheet" type="text/css" />
+<link
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+	rel="stylesheet">
 </head>
 <body>
-    <div class="content" id="apuesta">
-        <h2>Apuesta</h2>
-        <form action="/bet" method="post" id="apuesta-form">
-            <div class="form-group">
-                <label for="dinero">Dinero a Apostar:</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-dollar-sign"></i></span>
-                    </div>
-                    <input type="number" class="form-control" id="money" name="money" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="cuota">Cuota:</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-percentage"></i></span>
-                    </div>
-                    <input type="number" step="0.01" class="form-control" id="quote" name="quote" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="documento">Documento:</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="document" name="document" required>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="documento">Id Carrera:</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
-                    </div>
-                    <input type="text" class="form-control" id="race_id" name="race_id" th:value="${race_id}">
-                </div>
-            </div>
-            <button type="submit" class="btn custom-btn">Enviar Apuesta</button>
-        </form>
-    </div>
+	<section id="contenido1">
+		<div class="content" id="apuesta">
+			<h2>Apuesta</h2>
+			<form action="/bet" method="post" id="apuesta-form">
+				<div class="form-group">
+					<label for="dinero">Dinero a Apostar:</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i
+								class="fas fa-dollar-sign"></i></span>
+						</div>
+						<input type="number" class="form-control" id="money" name="money"
+							required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="documento">Documento:</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-id-card"></i></span>
+						</div>
+						<input type="text" class="form-control" id="document"
+							name="document" required>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="documento">Id Carrera:</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-id-card"></i></span>
+						</div>
+						<input type="text" class="form-control" id="race_id"
+							name="race_id" th:value="${race_id}">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="documento">Id Piloto:</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-id-card"></i></span>
+						</div>
+						<input type="text" class="form-control" id="pilot_id"
+							name="pilot_id">
+					</div>
+				</div>
+				<button type="submit" class="btn custom-btn">Enviar Apuesta</button>
+			</form>
+		</div>
+	</section>
 </body>
 </html>

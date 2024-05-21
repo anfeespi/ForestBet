@@ -26,6 +26,8 @@ public class RegisterController {
 		
 		String id = responseData.split("-")[1];
 		
+		model.addAttribute("client_id", id);
+		
 		StringBuilder requestLogin = new StringBuilder("http://localhost:8080/signup?");
 		requestLogin.append("username="+username);
 		requestLogin.append("&encryptedPassword="+password);
